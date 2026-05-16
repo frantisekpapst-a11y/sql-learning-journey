@@ -1,23 +1,21 @@
-📘 SQL Examples — Lekce 1–6 (ITnetwork Inspired)
+📘 SQL Examples — Lekce 1–11 (ITnetwork Inspired)
+
+Praktické SQL příklady pro procvičení základů databází, JOINů, agregací a poddotazů.
 
 📗 Lekce 1 — CREATE DATABASE / CREATE TABLE
-
 Query #1 — Vytvoření databáze
-
 CREATE DATABASE FitnessCentrum;
-
 Výsledek
-Vytvoří novou databázi FitnessCentrum.
+
+Vytvoří databázi FitnessCentrum.
 
 Query #2 — Vytvoření tabulky
-
 CREATE TABLE Clenove (
     Id INT PRIMARY KEY IDENTITY(1,1),
     Jmeno NVARCHAR(50),
     Vek INT,
     Tarif NVARCHAR(30)
 );
-
 Sloupec	Typ
 Id	INT
 Jmeno	NVARCHAR
@@ -25,9 +23,7 @@ Vek	INT
 Tarif	NVARCHAR
 
 📗 Lekce 2 — INSERT INTO
-
-Query #1 — Vložení jednoho řádku
-
+Query #1 — Jeden řádek
 INSERT INTO Clenove (
     Jmeno,
     Vek,
@@ -38,12 +34,9 @@ VALUES (
     28,
     'Premium'
 );
-
 Jmeno	Vek	Tarif
 Jan	28	Premium
-
-Query #2 — Vložení více řádků
-
+Query #2 — Více řádků
 INSERT INTO Clenove (
     Jmeno,
     Vek,
@@ -53,151 +46,308 @@ VALUES
 ('Eva', 34, 'Basic'),
 ('Petr', 19, 'Student'),
 ('Lucie', 41, 'Premium');
+Výsledek
 
-Počet vložených řádků
-3
+3 vložené řádky.
 
 📗 Lekce 3 — UPDATE
-
-Query #1 — Úprava tarifu
-
+Query #1 — Změna tarifu
 UPDATE Clenove
 SET Tarif = 'Standard'
 WHERE Tarif = 'Basic';
-
-Původní tarif	Nový tarif
+Původní	Nový
 Basic	Standard
-
 Query #2 — Zvýšení věku
-
 UPDATE Clenove
 SET Vek = Vek + 1
 WHERE Jmeno = 'Petr';
 
-Jmeno	Změna
-Petr	věk +1
-
 📗 Lekce 4 — DELETE / TRUNCATE / DROP
-
-Query #1 — Smazání neaktivních členů
-
+Query #1 — DELETE
 DELETE FROM Clenove
 WHERE Aktivni = 0;
 
-Akce
-Smazání vybraných řádků
+👉 smaže pouze vybrané řádky
 
-Query #2 — Vyprázdnění tabulky
-
+Query #2 — TRUNCATE
 TRUNCATE TABLE Clenove;
 
-Akce
-Smazání všech řádků
+👉 smaže všechna data
 
-Query #3 — Odstranění tabulky
-
+Query #3 — DROP
 DROP TABLE Clenove;
-Akce
-Kompletní odstranění tabulky
 
-📗 Lekce 5 — Import / Export / CRUD
+👉 smaže tabulku kompletně
 
+📗 Lekce 5 — CRUD
 Query #1 — CRUD operace
-
 CREATE TABLE Produkty (
     Id INT PRIMARY KEY,
     Nazev NVARCHAR(50)
 );
-INSERT INTO Produkty VALUES (1, 'Notebook');
+
+INSERT INTO Produkty
+VALUES (1, 'Notebook');
+
 UPDATE Produkty
 SET Nazev = 'Herní notebook'
 WHERE Id = 1;
+
 DELETE FROM Produkty
 WHERE Id = 1;
-
 CRUD	Význam
-Create	vytvoření
-Read	čtení
-Update	úprava
-Delete	mazání
+Create	INSERT
+Read	SELECT
+Update	UPDATE
+Delete	DELETE
 
 📗 Lekce 6 — SELECT / WHERE / LIKE / IN / BETWEEN
-
-Query #1 — Výběr všech produktů
-
+Query #1 — SELECT *
 SELECT *
 FROM produkty;
-
-Výsledek
-Všechny řádky a sloupce
-
-Query #2 — Výběr konkrétních sloupců
-
+Query #2 — Konkrétní sloupce
 SELECT nazev, cena
 FROM produkty;
-
-Sloupce
-nazev, cena
-
-Query #3 — Filtrování pomocí WHERE
-
+Query #3 — WHERE
 SELECT *
 FROM produkty
 WHERE cena > 5000;
-
-Podmínka
-cena větší než 5000
-
 Query #4 — AND
 SELECT *
 FROM produkty
 WHERE cena > 1000
 AND skladem > 5;
-
-Podmínky
-obě musí platit
-
 Query #5 — OR
-
 SELECT *
 FROM produkty
 WHERE kategorie = 'Nábytek'
 OR cena > 20000;
-
-Vrátí
-nábytek nebo drahé produkty
-
 Query #6 — LIKE
-
 SELECT *
 FROM produkty
 WHERE nazev LIKE '%Samsung%';
-
-Vrátí
-názvy obsahující Samsung
-
 Query #7 — IN
-
 SELECT *
 FROM produkty
 WHERE kategorie IN ('Elektronika', 'Doplňky');
-
-Vrátí
-produkty z vybraných kategorií
-
 Query #8 — BETWEEN
-
 SELECT *
 FROM produkty
 WHERE cena BETWEEN 1000 AND 10000;
-
-Rozsah
-1000–10000
-
 Query #9 — TOP
-
 SELECT TOP 3 *
 FROM produkty;
 
-Vrátí
-první 3 řádky
+📗 Lekce 7 — ORDER BY / DISTINCT / NULL
+Query #1 — ORDER BY DESC
+SELECT *
+FROM produkty
+ORDER BY cena DESC;
+Query #2 — DISTINCT
+SELECT DISTINCT kategorie
+FROM produkty;
+
+👉 unikátní hodnoty
+
+Query #3 — IS NULL
+SELECT *
+FROM produkty
+WHERE sleva IS NULL;
+
+📗 Lekce 8 — GROUP BY / Agregace
+Query #1 — COUNT
+SELECT COUNT(*) AS pocet_produktu
+FROM produkty;
+Query #2 — AVG
+SELECT AVG(cena) AS prumerna_cena
+FROM produkty;
+Query #3 — SUM + GROUP BY
+SELECT
+    kategorie,
+    SUM(cena) AS celkem
+FROM produkty
+GROUP BY kategorie;
+Query #4 — HAVING
+SELECT
+    kategorie,
+    COUNT(*) AS pocet
+FROM produkty
+GROUP BY kategorie
+HAVING COUNT(*) > 3;
+
+📗 Lekce 9 — JOIN
+Query #1 — INNER JOIN
+SELECT
+    c.customer_name,
+    o.amount
+FROM customers c
+INNER JOIN orders o
+    ON c.customer_id = o.customer_id;
+Query #2 — LEFT JOIN
+SELECT
+    c.customer_name,
+    o.amount
+FROM customers c
+LEFT JOIN orders o
+    ON c.customer_id = o.customer_id;
+Query #3 — LEFT JOIN + COUNT
+SELECT
+    c.customer_name,
+    COUNT(o.order_id) AS total_orders
+FROM customers c
+LEFT JOIN orders o
+    ON c.customer_id = o.customer_id
+GROUP BY c.customer_name;
+
+👉 správné použití COUNT u LEFT JOIN
+
+Query #4 — Zákazníci bez objednávky
+SELECT
+    c.customer_name
+FROM customers c
+LEFT JOIN orders o
+    ON c.customer_id = o.customer_id
+WHERE o.order_id IS NULL;
+Query #5 — COALESCE
+SELECT
+    c.customer_name,
+    COALESCE(SUM(o.amount), 0) AS revenue
+FROM customers c
+LEFT JOIN orders o
+    ON c.customer_id = o.customer_id
+GROUP BY c.customer_name;
+
+📗 Lekce 10 — JOIN přes více tabulek / M:N
+Query #1 — Více JOINů
+SELECT
+    s.name,
+    c.course_name
+FROM students s
+JOIN student_courses sc
+    ON s.student_id = sc.student_id
+JOIN courses c
+    ON sc.course_id = c.course_id;
+Query #2 — LEFT JOIN přes M:N
+SELECT
+    s.name,
+    c.course_name
+FROM students s
+LEFT JOIN student_courses sc
+    ON s.student_id = sc.student_id
+LEFT JOIN courses c
+    ON sc.course_id = c.course_id;
+Query #3 — Studenti bez kurzu
+SELECT
+    s.name
+FROM students s
+LEFT JOIN student_courses sc
+    ON s.student_id = sc.student_id
+WHERE sc.course_id IS NULL;
+Query #4 — Počet kurzů na studenta
+SELECT
+    s.name,
+    COUNT(c.course_id) AS number_courses
+FROM students s
+LEFT JOIN student_courses sc
+    ON s.student_id = sc.student_id
+LEFT JOIN courses c
+    ON sc.course_id = c.course_id
+GROUP BY s.name;
+Query #5 — Podmínka v ON
+SELECT
+    s.name,
+    c.course_name
+FROM students s
+LEFT JOIN student_courses sc
+    ON s.student_id = sc.student_id
+LEFT JOIN courses c
+    ON sc.course_id = c.course_id
+   AND c.course_name = 'SQL';
+
+👉 LEFT JOIN zůstane zachovaný
+
+📗 Lekce 11 — Poddotazy / EXISTS / CTE
+Query #1 — Poddotaz v WHERE
+SELECT *
+FROM orders
+WHERE amount > (
+    SELECT AVG(amount)
+    FROM orders
+);
+Query #2 — IN
+SELECT *
+FROM orders
+WHERE customer_id IN (
+    SELECT customer_id
+    FROM customers
+    WHERE country = 'DE'
+);
+Query #3 — EXISTS
+SELECT *
+FROM customers c
+WHERE EXISTS (
+    SELECT *
+    FROM orders o
+    WHERE c.customer_id = o.customer_id
+);
+Query #4 — NOT EXISTS
+SELECT *
+FROM customers c
+WHERE NOT EXISTS (
+    SELECT *
+    FROM orders o
+    WHERE c.customer_id = o.customer_id
+);
+Query #5 — Poddotaz jako tabulka
+SELECT
+    c.name,
+    revenue.total_revenue
+FROM (
+    SELECT
+        customer_id,
+        SUM(amount) AS total_revenue
+    FROM orders
+    GROUP BY customer_id
+) revenue
+JOIN customers c
+    ON revenue.customer_id = c.customer_id;
+Query #6 — CTE
+WITH customer_revenue AS (
+    SELECT
+        customer_id,
+        SUM(amount) AS total_revenue
+    FROM orders
+    GROUP BY customer_id
+)
+
+SELECT
+    c.name,
+    cr.total_revenue
+FROM customer_revenue cr
+JOIN customers c
+    ON cr.customer_id = c.customer_id;
+Query #7 — Maximum přes CTE
+WITH customer_revenue AS (
+    SELECT
+        customer_id,
+        SUM(amount) AS total_revenue
+    FROM orders
+    GROUP BY customer_id
+),
+
+max_revenue AS (
+    SELECT
+        MAX(total_revenue) AS max_value
+    FROM customer_revenue
+)
+
+SELECT
+    c.name,
+    cr.total_revenue
+FROM customer_revenue cr
+JOIN customers c
+    ON cr.customer_id = c.customer_id
+CROSS JOIN max_revenue mr
+WHERE cr.total_revenue = mr.max_value;
+
+👉 zákazník s nejvyšším revenue
