@@ -1,288 +1,412 @@
 # 📊 SQL Learning Journey
 
-Tento repozitář dokumentuje moji cestu učení SQL – od úplných základů až po pokročilejší analytické case studies.
+Tento repozitář dokumentuje moji cestu učení SQL — od úplných základů až po pokročilejší analytické scénáře a business reporting.
 
-🎯 **Cíl:** dostat se na úroveň junior data analytika a umět řešit reálné business problémy pomocí dat.
+🎯 **Cíl projektu:**  
+dostat se na úroveň junior data analytika a naučit se řešit reálné business problémy pomocí SQL.
 
 ---
 
-# 📁 Obsah repozitáře
+# 📁 Struktura repozitáře
 
-- `sql-cheatsheet.md` → přehled SQL syntaxe, logiky a základních patternů  
-- `sql_fiddle_examples.sql` → menší praktické ukázky a tréninkové dotazy  
-- `sql_cheatsheet_mini_tests` → krátké mini úkoly na procvičení  
-- `case_study_1.sql` → základní customer analysis  
-- `case_study_2.sql` → product & customer analysis  
-- `case_study_3.sql` → top category per customer + segmentation  
-- `case_study_4.sql` → customer revenue trends (LAG, % change)  
-- `case_study_5.sql` → revenue change + growth/decline status  
-- `case_study_6.sql` → filtering + TOP growth customers  
-- `case_study_7.sql` → customer value analysis (revenue, segment, ranking)  
-- `case_study_8.sql` → customer activity gaps (LAG, DATEDIFF, inactivity analysis)  
-- `case_study_9.sql` → latest customer revenue status (LAG, ROW_NUMBER, CASE, CTE pipeline)
+## 📘 SQL Examples
+
+Praktické SQL ukázky inspirované ITnetwork learning path.
+
+### `sql-examples-itnetwork-certification`
+Obsahuje:
+
+- CREATE DATABASE
+- CREATE TABLE
+- INSERT INTO
+- UPDATE
+- DELETE / TRUNCATE / DROP
+- SELECT
+- WHERE
+- LIKE
+- IN
+- BETWEEN
+- ORDER BY
+- TOP
+- COUNT / SUM / AVG / MIN / MAX
+- GROUP BY
+- HAVING
+- JOIN
+- subquery
+- EXISTS / NOT EXISTS
+- CTE
+
+---
+
+### `sql-fiddle-examples`
+Praktické SQL playground příklady a experimenty.
+
+Zaměřeno na:
+
+- analytické patterny
+- testování JOINů
+- práci s agregacemi
+- business reporting
+- debugging SQL dotazů
+
+---
+
+# 📄 SQL Cheatsheets
+
+## `sql-cheatsheet-itnetwork-certification.md`
+
+Kompletní přehled SQL syntaxe a poznámek z ITnetwork learning journey.
+
+Obsahuje:
+
+- syntaxe
+- vysvětlení SQL logiky
+- JOIN patterny
+- agregace
+- poddotazy
+- CTE
+- window functions
+- analytické tipy
+
+---
+
+## `sql-cheatsheet.md`
+
+Vlastní rozšířený SQL cheatsheet.
+
+Obsahuje:
+
+- business reporting patterny
+- revenue analýzy
+- customer analytics
+- praktické SQL poznámky
+- nejčastější analytické scénáře
+
+---
+
+# 🧪 SQL Mini Tests
+
+## `sql-itnetwork-certification-mini-tests.md`
+
+Mini testy k jednotlivým lekcím.
+
+Zaměřeno na:
+
+- procvičení syntaxe
+- pochopení SQL logiky
+- práci s daty
+- analytické přemýšlení
+
+---
+
+## `sql-cheatsheet-mini-tests.md`
+
+Vlastní opakovací mini testy.
+
+Obsahují:
+
+- JOIN otázky
+- agregace
+- business scénáře
+- SQL debugging
+- rozdíly mezi SQL patterny
+
+---
+
+# 📊 SQL Case Studies — ITnetwork Certification
+
+Série realistických business scénářů zaměřených na datovou analytiku.
+
+---
+
+## 📘 Case Study 01 — Fitness Center Membership Management
+
+Základy SQL nad jednoduchou databází členů fitness centra.
+
+### Procvičené oblasti
+
+- CREATE TABLE
+- INSERT
+- UPDATE
+- DELETE
+- WHERE
+- základní business logika
+
+### Business témata
+
+- správa zákazníků
+- změny tarifů
+- filtrování aktivních členů
+
+---
+
+## 📘 Case Study 02 — E-commerce Product Analytics
+
+Produktová analytika nad databází e-shopu.
+
+### Procvičené oblasti
+
+- SELECT
+- WHERE
+- GROUP BY
+- HAVING
+- agregace
+- business reporting
+
+### Business témata
+
+- produktová analytika
+- skladová analytika
+- revenue reporting
+- cenová analýza
+
+---
+
+## 📘 Case Study 03 — SQL Reporting & Relational Analysis
+
+Práce s více propojenými tabulkami a analytickými SQL patterny.
+
+### Procvičené oblasti
+
+- INNER JOIN
+- LEFT JOIN
+- EXISTS
+- NOT EXISTS
+- subquery
+- CTE
+- M:N vztahy
+
+### Business témata
+
+- customer reporting
+- revenue analýza
+- zákazníci bez objednávek
+- produktové kategorie
+
+---
+
+# 📊 SQL Original Case Studies
+
+Vlastní analytické mini projekty zaměřené na business reporting a customer analytics.
+
+---
+
+## 📘 Case Study 01 — Customer Analysis
+
+Základní customer analytics.
+
+### Řešené problémy
+
+- revenue zákazníků
+- počet objednávek
+- průměrné hodnoty objednávek
+
+---
+
+## 📘 Case Study 02 — Product & Customer Analysis
+
+Analýza zákazníků a produktů přes více tabulek.
+
+### Řešené problémy
+
+- revenue podle produktů
+- revenue podle kategorií
+- customer reporting
+
+---
+
+## 📘 Case Study 03 — Top Category per Customer
+
+Pokročilejší analytický scénář.
+
+### Řešené problémy
+
+- top category zákazníka
+- customer segmentation
+- ranking kategorií
+
+### SQL témata
+
+- ROW_NUMBER()
+- CASE WHEN
+- CTE
+
+---
+
+## 📘 Case Study 04 — Customer Revenue Trend Analysis
+
+Analýza vývoje revenue v čase.
+
+### Řešené problémy
+
+- změna revenue
+- month-over-month analýza
+- trend reporting
+
+### SQL témata
+
+- LAG()
+- window functions
+- časové analýzy
+
+---
+
+## 📘 Case Study 05 — Customer Revenue Trends & Growth Analysis
+
+Rozšíření trendové analytiky.
+
+### Řešené problémy
+
+- growth vs decline
+- revenue změny
+- klasifikace zákazníků
+
+---
+
+## 📘 Case Study 06 — Top Growing Customers
+
+Identifikace zákazníků s nejvyšším růstem.
+
+### SQL témata
+
+- ranking
+- ROW_NUMBER()
+- filtrace TOP zákazníků
+
+---
+
+## 📘 Case Study 07 — Customer Value Analysis
+
+Komplexní customer analytics.
+
+### Řešené problémy
+
+- customer segmentation
+- customer ranking
+- revenue klasifikace
+
+### SQL témata
+
+- COALESCE
+- CASE WHEN
+- RANK()
+- LEFT JOIN
+
+---
+
+## 📘 Case Study 08 — Customer Activity Gaps
+
+Analýza neaktivity zákazníků.
+
+### Řešené problémy
+
+- inactivity gaps
+- předchozí aktivita
+- customer inactivity status
+
+### SQL témata
+
+- LAG()
+- DATEDIFF()
+- CTE
+
+---
+
+## 📘 Case Study 09 — Latest Customer Revenue Status
+
+Finální analytický mini projekt.
+
+### Řešené problémy
+
+- poslední známý stav zákazníka
+- revenue změny
+- growth / decline status
+
+### SQL témata
+
+- ROW_NUMBER()
+- LAG()
+- CASE WHEN
+- komplexní CTE pipeline
 
 ---
 
 # 🧠 Co se v repozitáři učím
 
 ## 🔰 SQL základy
-- SELECT, WHERE, ORDER BY  
-- GROUP BY, HAVING  
-- agregační funkce (SUM, COUNT, AVG, MAX, MIN)  
-- rozdíl mezi `COUNT(*)` a `COUNT(column)`  
 
-## 🔗 Práce s tabulkami
-- INNER JOIN  
-- LEFT JOIN  
-- rozdíl mezi filtrem v `WHERE` vs `ON`  
-- práce s více tabulkami  
-
-## 📊 Práce s daty
-- výpočty v SQL (např. `quantity * price`)  
-- práce s NULL hodnotami (`COALESCE`)  
-- segmentace (`CASE WHEN`)  
-
-## 🚀 Analytické patterny
-- revenue per customer / product / category  
-- top per group  
-- subquery vs CTE  
-- kombinace více kroků v jednom dotazu  
-
-## 🔥 Window functions
-- `ROW_NUMBER()` vs `RANK()`  
-- `LAG()` (předchozí hodnota)  
-- změna a % změna v čase  
-- ranking zákazníků  
-- agregace bez ztráty řádků (`SUM() OVER`)  
+- SELECT
+- WHERE
+- ORDER BY
+- INSERT / UPDATE / DELETE
+- práce s datovými typy
 
 ---
 
-# 📊 Používané datasety
+## 🔗 Relační databáze
 
-Používám jednoduché testovací datasety pro pochopení principů datové analýzy.
-
-### Jednoduchý dataset
-- `orders`  
-- `customers`  
-
-### Rozšířený dataset
-- `customers`  
-- `orders`  
-- `order_items`  
-- `products`  
-
-👉 Tento model umožňuje řešit realističtější analytické úlohy:
-- revenue podle zákazníka  
-- revenue podle produktu  
-- revenue podle kategorie  
-- top category per customer  
-- customer segmentation  
+- PRIMARY KEY
+- FOREIGN KEY
+- INNER JOIN
+- LEFT JOIN
+- M:N vztahy
+- vazební tabulky
 
 ---
 
-# 🧪 Practice / mini úkoly
+## 📊 Datová analytika
 
-Repozitář obsahuje menší cvičení zaměřená na budování SQL myšlení.
-
-## 🟢 Základy
-- vypsání dat  
-- filtrování (`WHERE`)  
-- počítání (`COUNT`)  
-
-## 🟡 Agregace
-- kolik utratil zákazník  
-- kolik má objednávek  
-- průměry  
-- HAVING  
-
-## 🟠 JOIN
-- spojování tabulek  
-- zákazníci bez objednávek  
-- revenue per customer  
-
-## 🔴 Pokročilé
-- TOP per group  
-- ROW_NUMBER vs RANK  
-- segmentace  
-- práce s mezivýsledky (CTE)  
+- GROUP BY
+- HAVING
+- agregace
+- revenue reporting
+- business reporting
 
 ---
 
-# 📊 Case Studies
+## 🚀 Pokročilé SQL
 
-## 📊 Case Study 1 – Customer Analysis
-Základní analýza zákazníků.
-
-**Co řeším:**
-- celkovou útratu  
-- počet objednávek  
-- průměr  
-
-**Témata:**
-- GROUP BY  
-- agregace  
-- HAVING  
+- CTE
+- subquery
+- EXISTS / NOT EXISTS
+- window functions
+- ranking
+- analytické patterny
 
 ---
 
-## 📊 Case Study 2 – Product & Customer Analysis
-Analýza přes více tabulek.
+# 🛠 Používané nástroje
 
-**Co řeším:**
-- revenue per product  
-- revenue per customer  
-- revenue by category  
-
-**Témata:**
-- JOINy  
-- výpočty  
-- agregace  
+- MS SQL Server
+- SQLize Online Playground
+- GitHub
+- VS Code
 
 ---
 
-## 📊 Case Study 3 – Top Category per Customer
-Kombinace více analytických kroků.
+# 🎯 Learning roadmap
 
-**Co řeším:**
-- top category per customer  
-- total revenue  
-- segment  
+Další plánovaný směr:
 
-**Témata:**
-- ROW_NUMBER()  
-- CASE WHEN  
-- COALESCE  
+- Excel
+- Power Query
+- Power BI
+- DAX
+- Python (pandas, EDA)
+- dashboarding
+- business intelligence
 
----
-
-## 📊 Case Study 4 – Revenue Trends
-Analýza vývoje v čase.
-
-**Co řeším:**
-- revenue v čase  
-- předchozí hodnota  
-- změna a % změna  
-
-**Témata:**
-- LAG()  
-- window functions  
+👉 SQL je základní stavební kámen celé learning journey.
 
 ---
 
-## 📊 Case Study 5 – Growth vs Decline
-Rozšíření trendové analýzy.
+# 📌 Poznámka autora
 
-**Co řeším:**
-- growth / decline status  
-- interpretace změny  
+Tento repozitář slouží jako dokumentace mého praktického učení SQL a datové analytiky.
 
-**Témata:**
-- CASE WHEN  
-- business logika  
+Nejde o produkční projekt, ale o:
 
----
-
-## 📊 Case Study 6 – Top Growth Customers
-Filtrace a výběr TOP zákazníků.
-
-**Co řeším:**
-- zákazníci s růstem  
-- TOP podle změny  
-
-**Témata:**
-- WHERE  
-- ROW_NUMBER / RANK  
-
----
-
-## 📊 Case Study 7 – Customer Value Analysis
-Komplexní analýza zákaznické hodnoty.
-
-**Co řeším:**
-- total revenue zákazníka  
-- segment (top / medium / low)  
-- ranking zákazníků  
-- zákazníci bez objednávek  
-
-**Témata:**
-- LEFT JOIN  
-- GROUP BY  
-- COALESCE  
-- CASE WHEN  
-- RANK()  
-- subquery vs CTE  
-
----
-
-## 📊 Case Study 8 – Customer Activity Gaps
-
-Analýza neaktivity zákazníků v čase.
-
-**Co řeším:**
-- předchozí datum aktivity  
-- počet dní od minulé aktivity  
-- klasifikaci `new / active / inactive_gap`  
-- identifikaci neaktivních zákazníků  
-
-**Témata:**
-- `LAG()`  
-- `DATEDIFF()`  
-- `CASE WHEN`  
-- `CTE`  
-
----
-
-## 📊 Case Study 9 – Latest Customer Revenue Status
-
-Finální SQL mini projekt zaměřený na poslední známý stav zákazníka.
-
-**Co řeším:**
-- poslední známý záznam zákazníka  
-- revenue v aktuálním období  
-- revenue v předchozím období  
-- změnu revenue  
-- status zákazníka (`growth / decline / no_change / new`)  
-
-**Témata:**
-- `LAG()`  
-- `ROW_NUMBER()`  
-- `CASE WHEN`  
-- `CTE`  
-- výběr posledního řádku per customer  
-
----
-
-# 🧠 Jak nad SQL přemýšlím
-
-SQL pro mě není jen syntaxe, ale způsob uvažování nad daty:
-
-1. Odkud beru data (FROM)  
-2. Jaké tabulky potřebuji (JOIN)  
-3. Co odfiltruji (WHERE)  
-4. Jak data seskupím (GROUP BY)  
-5. Co spočítám (SUM, COUNT…)  
-6. Co filtruji po agregaci (HAVING)  
-7. Jak seřadím výstup (ORDER BY)  
-
-👉 Postupně přecházím od psaní dotazů k řešení reálných analytických problémů.
-
----
-
-# 🚀 Další směr
-
-Další krok v learning journey:
-
-- Excel (základy + pokročilé funkce)  
-- Power BI (dashboardy, DAX)  
-- pokročilejší datová analýza  
-- Python (pandas, EDA)  
-
-👉 SQL zůstává základním nástrojem, na který budu navazovat.
-
----
-
-# 📌 Poznámka
-
-Tento repozitář je součást mého learning journey.
-
-Nejde o produkční projekt, ale o praktický přehled toho, co se učím, testuji a postupně chápu v oblasti datové analýzy.
+- praktický trénink
+- budování analytického myšlení
+- portfolio projektů
+- dokumentaci progresu v oblasti data analytics
