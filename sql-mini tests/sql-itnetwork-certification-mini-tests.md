@@ -1,4 +1,6 @@
-📘 Lekce 1 – Vytvoření databáze a tabulky
+📘 SQL Mini Tests — Lekce 1–11
+
+📘 Lekce 1 — CREATE DATABASE / CREATE TABLE
 
 ❓ Otázky
 Jaké základní datové typy jsme používali?
@@ -8,31 +10,31 @@ K čemu slouží PRIMARY KEY?
 Jaký SQL příkaz vytváří tabulku?
 
 ✅ Odpovědi
-INT, NVARCHAR, DATE.
-Automatické číslování záznamů.
-Hodnota nesmí být prázdná.
-K unikátní identifikaci záznamů.
-CREATE TABLE.
+INT, NVARCHAR, DATE
+Automatické číslování řádků
+Hodnota nesmí být prázdná (NULL)
+Unikátní identifikace řádku
+CREATE TABLE
 
-📘 Lekce 2 – Vkládání a mazání dat
+📘 Lekce 2 — INSERT / UPDATE / DELETE
 
 ❓ Otázky
-Proč při INSERT často neuvádíme sloupec Id?
+Proč při INSERT často neuvádíme Id?
 Co udělá tento dotaz?
-UPDATE [Knihy]
-SET [PocetStran] = 500;
+UPDATE Knihy
+SET PocetStran = 500;
 Jaký je rozdíl mezi DELETE a TRUNCATE TABLE?
 Co je SQL Injection?
 Co znamená CRUD?
 
 ✅ Odpovědi
-Databáze ho vyplní sama díky IDENTITY.
-U všech záznamů změní PocetStran na 500.
-DELETE maže konkrétní řádky (často přes WHERE), TRUNCATE smaže všechna data v tabulce.
-Bezpečnostní útok přes manipulaci SQL dotazu.
-Create, Read, Update, Delete.
+IDENTITY ho vyplní automaticky
+Změní hodnotu u všech řádků
+DELETE může mazat podmíněně, TRUNCATE smaže vše
+Manipulace SQL dotazu útočníkem
+Create, Read, Update, Delete
 
-📘 Lekce 3 – Export databáze
+📘 Lekce 3 — Export databáze
 
 ❓ Otázky
 Jaké existují typy exportu?
@@ -40,7 +42,7 @@ K čemu slouží SET IDENTITY_INSERT?
 Co znamená export struktury?
 Co vrátí:
 SELECT *
-FROM [Uzivatele];
+FROM Uzivatele;
 Jaký je rozdíl mezi DELETE a TRUNCATE?
 Jakým příkazem vkládáme data?
 Jakým příkazem upravujeme data?
@@ -48,17 +50,17 @@ Proč je důležité používat WHERE?
 Co znamená CRUD?
 
 ✅ Odpovědi
-Kompletní export, export struktury, export dat.
-Umožní ručně vložit hodnoty do IDENTITY sloupce.
-Export pouze struktury tabulek bez dat.
-Všechny řádky a sloupce tabulky.
-DELETE může mazat podmíněně, TRUNCATE smaže vše a resetuje IDENTITY.
-INSERT INTO.
-UPDATE.
-Aby se neupravily všechny řádky v tabulce.
-Create, Read, Update, Delete.
+Kompletní export, export struktury, export dat
+Ruční vkládání hodnot do IDENTITY
+Export pouze struktury tabulek
+Všechny řádky a sloupce
+DELETE může mít WHERE, TRUNCATE smaže vše a resetuje IDENTITY
+INSERT INTO
+UPDATE
+Aby se neupravily všechny řádky
+Create, Read, Update, Delete
 
-📘 Lekce 4 – Import databáze
+📘 Lekce 4 — Import databáze
 
 ❓ Otázky
 Co je .dacpac?
@@ -72,61 +74,186 @@ Jaký příkaz smaže data?
 Co znamená CRUD?
 
 ✅ Odpovědi
-Soubor pro přenos celé databáze (struktura + data).
-Import dat plní existující tabulku, import tabulky ji vytváří.
-Aby šlo ručně nastavovat hodnoty ID.
-Přepne aktivní databázi.
-Úplně smaže tabulku i její strukturu.
-CREATE TABLE.
-DROP TABLE.
-DELETE nebo TRUNCATE TABLE.
-Create, Read, Update, Delete.
+Soubor databáze (struktura + data)
+Import dat plní tabulku, import tabulky ji vytváří
+Aby šlo ručně nastavovat ID
+Přepne databázi
+Smaže tabulku i strukturu
+CREATE TABLE
+DROP TABLE
+DELETE nebo TRUNCATE
+Create, Read, Update, Delete
 
-📘 Lekce 5 – Kvíz a opakování
+📘 Lekce 5 — SQL mindset
 
 ❓ Otázky
-Pokud chceme pomocí SQL získat data:
-SQL neslouží k získávání dat z databáze.
-SQL vrátí vždy výpis všech dat v databázi.
-Řekneme databázi přesný postup, jak data získat.
-Řekneme pouze, co má být výsledkem.
+Co je hlavní princip SQL?
 Co dělá:
-TRUNCATE TABLE [Uzivatele];
+TRUNCATE TABLE Uzivatele;
 Co NEmůžeme importovat?
-Data
-Celou tabulku
-Databázi s daty bez tabulek
-Celou databázi
+Jaký je rozdíl mezi SQL a klasickým programováním?
+Co znamená CRUD?
 
 ✅ Odpovědi
+Říkáme databázi co chceme získat
+Smaže všechna data z tabulky
+Databázi s daty bez tabulek
+SQL popisuje výsledek, ne postup
+Create, Read, Update, Delete
 
-✅ Řekneme pouze, co má být výsledkem.
-
-✅ Vymaže všechny záznamy z tabulky.
-
-✅ Databázi s daty bez tabulek.
-
-📘 Bonus – Rozdíly mezi DELETE / TRUNCATE / DROP
+📘 Lekce 6 — SELECT / WHERE / LIKE / IN / BETWEEN
 
 ❓ Otázky
-Jaký je rozdíl mezi DROP a DELETE?
-Jaký je rozdíl mezi DROP a TRUNCATE?
-Jaký je rozdíl mezi DELETE a TRUNCATE?
+Co dělá SELECT *?
+K čemu slouží WHERE?
+Jaký je rozdíl mezi AND a OR?
+Co dělá LIKE '%Samsung%'?
+Kdy použijeme IN?
+K čemu slouží BETWEEN?
+Co dělá TOP 5?
+Co znamená ORDER BY price DESC?
+Jaký je rozdíl mezi ASC a DESC?
+K čemu slouží alias?
 
 ✅ Odpovědi
-1. DROP vs DELETE
-DROP	DELETE
-smaže tabulku	smaže data
-smaže strukturu	strukturu zachová
-tabulka přestane existovat	tabulka zůstane
-2. DROP vs TRUNCATE
-DROP	TRUNCATE
-smaže tabulku	smaže jen data
-smaže strukturu	strukturu zachová
-tabulka zmizí	tabulka zůstane
-3. DELETE vs TRUNCATE
-DELETE	TRUNCATE
-může mít WHERE	nemá WHERE
-maže postupně	smaže vše najednou
-neresetuje IDENTITY	resetuje IDENTITY
-pomalejší	rychlejší
+Vrátí všechny sloupce
+Filtruje řádky
+AND = obě podmínky, OR = alespoň jedna
+Hledá text obsahující Samsung
+Pro více hodnot
+Pro rozsah hodnot
+Vrátí prvních 5 řádků
+Seřadí podle ceny sestupně
+ASC vzestupně, DESC sestupně
+Zkrácení / přejmenování názvu
+
+📘 Lekce 7 — DISTINCT / NULL / Datové typy
+
+❓ Otázky
+Co znamená NULL?
+Je NULL stejné jako 0?
+Co znamená NOT NULL?
+K čemu slouží UNIQUE?
+Co dělá IDENTITY?
+Jaký je rozdíl mezi VARCHAR a NVARCHAR?
+Co znamená DEFAULT?
+K čemu slouží datový typ BIT?
+Může mít PRIMARY KEY hodnotu NULL?
+Co dělá DISTINCT?
+
+✅ Odpovědi
+Nezadaná hodnota
+Ne
+Hodnota musí existovat
+Zakáže duplicity
+Automatické číslování
+NVARCHAR podporuje Unicode
+Výchozí hodnota
+TRUE/FALSE
+Ne
+Vrátí unikátní hodnoty
+
+📘 Lekce 8 — GROUP BY / Agregace
+
+❓ Otázky
+Co dělá COUNT(*)?
+Co dělá AVG()?
+Co dělá SUM()?
+Jaký je rozdíl mezi MAX() a MIN()?
+K čemu slouží GROUP BY?
+Co filtruje HAVING?
+Jaký je rozdíl mezi WHERE a HAVING?
+Proč musí být sloupce v SELECT buď agregace nebo GROUP BY?
+Co vrátí:
+COUNT(column_name)
+Co znamená agregace?
+
+✅ Odpovědi
+Počet řádků
+Průměr
+Součet
+Nejvyšší vs nejnižší hodnota
+Seskupování dat
+Agregované skupiny
+WHERE filtruje řádky, HAVING skupiny
+Aby SQL vědělo jak data seskupit
+Počet nenull hodnot
+Shrnutí více řádků do jedné hodnoty
+
+📘 Lekce 9 — JOIN
+
+❓ Otázky
+K čemu slouží JOIN?
+Jaký je rozdíl mezi INNER JOIN a LEFT JOIN?
+Co znamená LEFT JOIN?
+Jak najdeme zákazníky bez objednávky?
+Proč může COUNT(*) rozbít LEFT JOIN?
+Proč je lepší COUNT(order_id)?
+Co dělá COALESCE?
+Jaký je rozdíl mezi podmínkou v ON a WHERE?
+Co znamená alias?
+Co znamená „Ambiguous column name“?
+
+✅ Odpovědi
+Pro spojování tabulek
+INNER vrací jen shody, LEFT vše zleva
+Všechny řádky z levé tabulky + shody
+LEFT JOIN + IS NULL
+Počítá i null řádky
+Počítá jen existující hodnoty
+Nahrazuje NULL jinou hodnotou
+ON ovlivňuje spojování, WHERE filtruje výsledek
+Zkrácení názvu tabulky/sloupce
+SQL neví, ke které tabulce sloupec patří
+
+📘 Lekce 10 — M:N a více JOINů
+
+❓ Otázky
+Co je vazba M:N?
+Jak řeší databáze M:N vztah?
+Co je vazební tabulka?
+Proč nejde M:N propojit přímo?
+Co dělá první JOIN ve více JOIN dotazu?
+Proč používáme aliasy u složitých JOINů?
+Jak najdeme studenty bez kurzu?
+Proč používáme LEFT JOIN u „bez objednávky / bez kurzu“?
+Co vrací COUNT při LEFT JOIN a NULL?
+Kdy použijeme více JOINů?
+
+✅ Odpovědi
+Více k více
+Přes vazební tabulku
+Tabulka propojující dvě tabulky
+Chybí společný atribut
+Vytvoří první propojený dataset
+Přehlednost
+LEFT JOIN + IS NULL
+Aby zůstaly i nepropojené řádky
+COUNT(column) ignoruje NULL
+Když potřebujeme více propojených tabulek
+
+📘 Lekce 11 — Poddotazy / CTE
+
+❓ Otázky
+Co je poddotaz?
+Kdy se vykoná vnitřní dotaz?
+Co znamená korelovaný poddotaz?
+Kdy použijeme IN?
+Co dělá EXISTS?
+Co dělá NOT EXISTS?
+Co vrací poddotaz v FROM?
+Jaký je rozdíl mezi poddotazem a CTE?
+Co znamená WITH?
+Co dělá CROSS JOIN?
+
+✅ Odpovědi
+Dotaz uvnitř dotazu
+Před vnějším dotazem
+Vnitřní dotaz používá vnější dotaz
+Když poddotaz vrací více hodnot
+Testuje existenci řádku
+Testuje neexistenci
+Dočasnou tabulku
+CTE je čitelnější pojmenovaný mezivýsledek
+Definice CTE
+Spojí všechny kombinace řádků
