@@ -351,3 +351,287 @@ CROSS JOIN max_revenue mr
 WHERE cr.total_revenue = mr.max_value;
 
 👉 zákazník s nejvyšším revenue
+
+🔧 ALTER TABLE
+Přidání sloupce
+ALTER TABLE [Komentare]
+ADD [Palce] INT;
+Změna datového typu
+ALTER TABLE [Komentare]
+ALTER COLUMN [Palce] BIGINT;
+Odebrání sloupce
+ALTER TABLE [Komentare]
+DROP COLUMN [Palce];
+
+🔢 DBCC CHECKIDENT
+DBCC CHECKIDENT ('Uzivatele', RESEED, 1233);
+
+👉 další vložené ID bude 1234
+
+🔄 TRANSAKCE
+Commit
+BEGIN TRANSACTION;
+
+UPDATE [Ucty]
+SET [Balance] = [Balance] - 100
+WHERE [Id] = 1;
+
+UPDATE [Ucty]
+SET [Balance] = [Balance] + 100
+WHERE [Id] = 2;
+
+COMMIT TRANSACTION;
+Rollback
+BEGIN TRANSACTION;
+
+DELETE FROM [Uzivatele]
+WHERE [Id] = 5;
+
+ROLLBACK TRANSACTION;
+
+👉 změna se neuloží
+
+👁️ VIEW
+Vytvoření view
+CREATE VIEW AktivniUzivatele AS
+SELECT *
+FROM [Uzivatele]
+WHERE [Aktivni] = 1;
+Použití view
+SELECT *
+FROM AktivniUzivatele;
+
+⚡ INDEXY
+Jednosloupcový index
+CREATE INDEX IDX_Clanky_Url
+ON [Clanky] ([Url]);
+Vícesloupcový index
+CREATE INDEX IDX_User_Name
+ON [Users] ([FirstName], [LastName]);
+
+🔍 HAVING
+SELECT
+    [CustomerId],
+    SUM([Amount]) AS [Revenue]
+FROM [Orders]
+GROUP BY [CustomerId]
+HAVING SUM([Amount]) > 1000;
+
+⚡ WHERE vs HAVING
+WHERE
+SELECT *
+FROM [Orders]
+WHERE [Amount] > 1000;
+
+👉 filtruje řádky
+
+HAVING
+SELECT
+    [CustomerId],
+    SUM([Amount])
+FROM [Orders]
+GROUP BY [CustomerId]
+HAVING SUM([Amount]) > 1000;
+
+👉 filtruje skupiny
+
+⚙️ TRIGGERY
+AFTER INSERT Trigger
+CREATE TRIGGER AfterInsertUsers
+ON [Users]
+AFTER INSERT
+AS
+BEGIN
+    PRINT 'Nový uživatel vložen';
+END;
+AFTER DELETE Trigger
+CREATE TRIGGER AfterDeleteUsers
+ON [Users]
+AFTER DELETE
+AS
+BEGIN
+    PRINT 'Uživatel smazán';
+END;
+INSTEAD OF INSERT Trigger
+CREATE TRIGGER InsteadOfInsertUsers
+ON [Users]
+INSTEAD OF INSERT
+AS
+BEGIN
+    PRINT 'INSERT byl nahrazen triggerem';
+END;
+
+📥 inserted / deleted
+inserted
+SELECT *
+FROM inserted;
+
+👉 nové hodnoty
+
+deleted
+SELECT *
+FROM deleted;
+
+👉 staré hodnoty
+
+🧠 DECLARE
+DECLARE @Pocet INT;
+
+SET @Pocet = 10;
+
+SELECT @Pocet;
+⚙️ IF ELSE
+IF @Pocet > 10
+    SELECT 'Velke cislo';
+ELSE
+    SELECT 'Male cislo';
+
+📦 STORED PROCEDURE
+Vytvoření procedury
+CREATE PROCEDURE GetUsers
+AS
+BEGIN
+    SELECT *
+    FROM [Users];
+END;
+Spuštění procedury
+EXEC GetUsers;
+ALTER PROCEDURE
+ALTER PROCEDURE GetUsers
+AS
+BEGIN
+    SELECT [Id], [Name]
+    FROM [Users];
+END;
+DROP PROCEDURE
+DROP PROCEDURE GetUsers;
+
+📥 Procedura s parametrem
+CREATE PROCEDURE GetUsersByCity
+    @City NVARCHAR(50)
+AS
+BEGIN
+    SELECT *
+    FROM [Users]
+    WHERE [City] = @City;
+END;
+Volání procedury
+EXEC GetUsersByCity @City = 'Praha';
+
+📤OUTPUT parametr
+Procedura
+CREATE PROCEDURE CountUsers
+    @Count INT OUT
+AS
+BEGIN
+    SELECT @Count = COUNT(*)
+    FROM [Users];
+END;
+Volání
+DECLARE @Result INT;
+
+EXEC CountUsers @Count = @Result OUT;
+
+SELECT @Result;
+
+🧠 TRY CATCH
+BEGIN TRY
+    SELECT 1 / 0;
+END TRY
+
+BEGIN CATCH
+    SELECT
+        ERROR_NUMBER() AS [ErrorNumber],
+        ERROR_MESSAGE() AS [ErrorMessage];
+END CATCH;
+
+👤 LOGIN + USER
+LOGIN
+CREATE LOGIN test
+WITH PASSWORD = 'Test1234';
+USER
+CREATE USER test
+FOR LOGIN test;
+
+🔐 GRANT
+GRANT SELECT, EXECUTE
+ON DATABASE::Firma
+TO test;
+
+🔄 EXECUTE AS USER
+EXECUTE AS USER = 'test';
+
+↩️ REVERT
+REVERT;
+
+🔍 LIKE
+%
+SELECT *
+FROM [Users]
+WHERE [Email] LIKE '%@gmail.com';
+
+👉 libovolný počet znaků
+
+_
+SELECT *
+FROM [Users]
+WHERE [Name] LIKE 'D____';
+
+👉 jeden znak
+
+🚀 FULLTEXT SEARCH
+Fulltext katalog
+CREATE FULLTEXT CATALOG ClankyCatalog;
+Unique index
+CREATE UNIQUE INDEX FulltextId
+ON [Clanky]([Id]);
+Fulltext index
+CREATE FULLTEXT INDEX ON [Clanky]
+(
+    [Obsah] LANGUAGE 1029,
+    [Popis] LANGUAGE 1029
+)
+KEY INDEX [FulltextId]
+ON [ClankyCatalog];
+
+🧠 CONTAINS
+SELECT *
+FROM [Clanky]
+WHERE CONTAINS([Obsah], 'hra');
+
+👉 přesná fulltextová shoda
+
+🧠 FREETEXT
+SELECT *
+FROM [Clanky]
+WHERE FREETEXT([Obsah], 'hra');
+
+👉 významové hledání
+
+📊 CONTAINSTABLE
+SELECT
+    [CT].[RANK],
+    [C].[Titulek]
+FROM [Clanky] AS [C]
+INNER JOIN
+    CONTAINSTABLE([Clanky], [Obsah], 'hra') AS [CT]
+    ON [C].[Id] = [CT].[KEY]
+ORDER BY [CT].[RANK] DESC;
+
+📊 FREETEXTTABLE
+SELECT
+    [FT].[RANK],
+    [C].[Titulek]
+FROM [Clanky] AS [C]
+INNER JOIN
+    FREETEXTTABLE([Clanky], [Obsah], 'hra') AS [FT]
+    ON [C].[Id] = [FT].[KEY]
+ORDER BY [FT].[RANK] DESC;
+
+🌍 LANGUAGE 1029
+LANGUAGE 1029
+
+👉 český jazyk
+👉 skloňování
+👉 časování
+👉 kořeny slov
