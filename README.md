@@ -1,19 +1,34 @@
 # 📊 SQL Learning Journey
 
-Tento repozitář dokumentuje moji cestu učení SQL — od úplných základů až po pokročilejší analytické scénáře a business reporting.
+Tento repozitář dokumentuje moji cestu učením SQL — od úplných základů až po pokročilejší analytické scénáře, business reporting a databázový design.
 
 🎯 **Cíl projektu:**  
-dostat se na úroveň junior data analytika a naučit se řešit reálné business problémy pomocí SQL.
+Dostat se na úroveň junior data analytika a naučit se řešit reálné business problémy pomocí SQL.
 
 ---
 
 # 📁 Struktura repozitáře
 
-## 📘 SQL Examples
+```md
+📂 sql-learning-journey
+ ┣ 📄 README.md
+ ┣ 📂 sql-examples-itnetwork-certification
+ ┣ 📂 sql-fiddle-examples
+ ┣ 📂 sql-case-studies-itnetwork-certification
+ ┣ 📂 sql-original-case-studies
+ ┣ 📂 sql-mini-tests
+ ┣ 📂 sql-cheatsheets
+ ┗ 📂 sql-notes
+```
+
+---
+
+# 📘 SQL Examples
 
 Praktické SQL ukázky inspirované ITnetwork learning path.
 
-### `sql-examples-itnetwork-certification`
+## 📂 `sql-examples-itnetwork-certification`
+
 Obsahuje:
 
 - CREATE DATABASE
@@ -35,10 +50,19 @@ Obsahuje:
 - subquery
 - EXISTS / NOT EXISTS
 - CTE
+- ALTER TABLE
+- VIEW
+- INDEXY
+- TRANSAKCE
+- TRIGGERY
+- PROCEDURY
+- FULLTEXT SEARCH
+- FOREIGN KEYS
 
 ---
 
-### `sql-fiddle-examples`
+## 📂 `sql-fiddle-examples`
+
 Praktické SQL playground příklady a experimenty.
 
 Zaměřeno na:
@@ -48,45 +72,54 @@ Zaměřeno na:
 - práci s agregacemi
 - business reporting
 - debugging SQL dotazů
+- modelování databází
+- SQL experimentation
 
 ---
 
 # 📄 SQL Cheatsheets
 
-## `sql-cheatsheet-itnetwork-certification.md`
+## 📘 `sql-cheatsheet-itnetwork-certification.md`
 
 Kompletní přehled SQL syntaxe a poznámek z ITnetwork learning journey.
 
 Obsahuje:
 
-- syntaxe
-- vysvětlení SQL logiky
+- syntaxe SQL
+- SQL mindset
 - JOIN patterny
 - agregace
 - poddotazy
 - CTE
-- window functions
-- analytické tipy
+- VIEW
+- triggery
+- procedury
+- transakce
+- fulltext search
+- indexy
+- foreign keys
 
 ---
 
-## `sql-cheatsheet.md`
+## 📘 `sql-cheatsheet.md`
 
 Vlastní rozšířený SQL cheatsheet.
 
 Obsahuje:
 
 - business reporting patterny
-- revenue analýzy
 - customer analytics
-- praktické SQL poznámky
-- nejčastější analytické scénáře
+- revenue reporting
+- SQL debugging
+- performance mindset
+- databázové best practices
+- analytické SQL workflow
 
 ---
 
 # 🧪 SQL Mini Tests
 
-## `sql-itnetwork-certification-mini-tests.md`
+## 📘 `sql-itnetwork-certification-mini-tests.md`
 
 Mini testy k jednotlivým lekcím.
 
@@ -96,10 +129,11 @@ Zaměřeno na:
 - pochopení SQL logiky
 - práci s daty
 - analytické přemýšlení
+- databázový design
 
 ---
 
-## `sql-cheatsheet-mini-tests.md`
+## 📘 `sql-cheatsheet-mini-tests.md`
 
 Vlastní opakovací mini testy.
 
@@ -109,19 +143,21 @@ Obsahují:
 - agregace
 - business scénáře
 - SQL debugging
+- foreign keys
+- transakce
 - rozdíly mezi SQL patterny
 
 ---
 
 # 📊 SQL Case Studies — ITnetwork Certification
 
-Série realistických business scénářů zaměřených na datovou analytiku.
+Série realistických business scénářů zaměřených na datovou analytiku, reporting a databázový design.
 
 ---
 
 ## 📘 Case Study 01 — Fitness Center Membership Management
 
-Základy SQL nad jednoduchou databází členů fitness centra.
+Základy SQL nad databází členů fitness centra.
 
 ### Procvičené oblasti
 
@@ -185,6 +221,77 @@ Práce s více propojenými tabulkami a analytickými SQL patterny.
 
 ---
 
+## 📘 Case Study 04 — Database Automation & Triggers
+
+Automatizace databázových procesů pomocí triggerů a procedur.
+
+### Procvičené oblasti
+
+- TRIGGERY
+- inserted / deleted
+- procedury
+- TRY / CATCH
+- DECLARE
+- IF ELSE
+
+### Business témata
+
+- audit změn
+- automatizace databáze
+- historie operací
+- business pravidla
+
+---
+
+## 📘 Case Study 05 — Fulltext Search & Reporting
+
+Práce s fulltextovým vyhledáváním a reportingem.
+
+### Procvičené oblasti
+
+- CONTAINS
+- FREETEXT
+- CONTAINSTABLE
+- FREETEXTTABLE
+- VIEW
+- agregace
+
+### Business témata
+
+- vyhledávání produktů
+- relevance výsledků
+- reporting dat
+- textová analytika
+
+---
+
+## 📘 Case Study 06 — E-shop Orders & Transactions
+
+Komplexnější business case propojující databázový design a business logiku.
+
+### Procvičené oblasti
+
+- FOREIGN KEY
+- ON DELETE CASCADE
+- ON DELETE NO ACTION
+- VIEW
+- INDEX
+- TRANSAKCE
+- ROLLBACK
+- TRIGGERY
+- FULLTEXT SEARCH
+
+### Business témata
+
+- e-shop objednávky
+- skladové zásoby
+- integrita dat
+- audit mazání objednávek
+- revenue reporting
+- databázová konzistence
+
+---
+
 # 📊 SQL Original Case Studies
 
 Vlastní analytické mini projekty zaměřené na business reporting a customer analytics.
@@ -192,8 +299,6 @@ Vlastní analytické mini projekty zaměřené na business reporting a customer 
 ---
 
 ## 📘 Case Study 01 — Customer Analysis
-
-Základní customer analytics.
 
 ### Řešené problémy
 
@@ -205,8 +310,6 @@ Základní customer analytics.
 
 ## 📘 Case Study 02 — Product & Customer Analysis
 
-Analýza zákazníků a produktů přes více tabulek.
-
 ### Řešené problémy
 
 - revenue podle produktů
@@ -216,14 +319,6 @@ Analýza zákazníků a produktů přes více tabulek.
 ---
 
 ## 📘 Case Study 03 — Top Category per Customer
-
-Pokročilejší analytický scénář.
-
-### Řešené problémy
-
-- top category zákazníka
-- customer segmentation
-- ranking kategorií
 
 ### SQL témata
 
@@ -235,14 +330,6 @@ Pokročilejší analytický scénář.
 
 ## 📘 Case Study 04 — Customer Revenue Trend Analysis
 
-Analýza vývoje revenue v čase.
-
-### Řešené problémy
-
-- změna revenue
-- month-over-month analýza
-- trend reporting
-
 ### SQL témata
 
 - LAG()
@@ -252,8 +339,6 @@ Analýza vývoje revenue v čase.
 ---
 
 ## 📘 Case Study 05 — Customer Revenue Trends & Growth Analysis
-
-Rozšíření trendové analytiky.
 
 ### Řešené problémy
 
@@ -265,25 +350,15 @@ Rozšíření trendové analytiky.
 
 ## 📘 Case Study 06 — Top Growing Customers
 
-Identifikace zákazníků s nejvyšším růstem.
-
 ### SQL témata
 
 - ranking
 - ROW_NUMBER()
-- filtrace TOP zákazníků
+- TOP customers
 
 ---
 
 ## 📘 Case Study 07 — Customer Value Analysis
-
-Komplexní customer analytics.
-
-### Řešené problémy
-
-- customer segmentation
-- customer ranking
-- revenue klasifikace
 
 ### SQL témata
 
@@ -296,14 +371,6 @@ Komplexní customer analytics.
 
 ## 📘 Case Study 08 — Customer Activity Gaps
 
-Analýza neaktivity zákazníků.
-
-### Řešené problémy
-
-- inactivity gaps
-- předchozí aktivita
-- customer inactivity status
-
 ### SQL témata
 
 - LAG()
@@ -313,14 +380,6 @@ Analýza neaktivity zákazníků.
 ---
 
 ## 📘 Case Study 09 — Latest Customer Revenue Status
-
-Finální analytický mini projekt.
-
-### Řešené problémy
-
-- poslední známý stav zákazníka
-- revenue změny
-- growth / decline status
 
 ### SQL témata
 
@@ -339,7 +398,8 @@ Finální analytický mini projekt.
 - WHERE
 - ORDER BY
 - INSERT / UPDATE / DELETE
-- práce s datovými typy
+- datové typy
+- CRUD operace
 
 ---
 
@@ -351,6 +411,7 @@ Finální analytický mini projekt.
 - LEFT JOIN
 - M:N vztahy
 - vazební tabulky
+- integrita dat
 
 ---
 
@@ -360,6 +421,7 @@ Finální analytický mini projekt.
 - HAVING
 - agregace
 - revenue reporting
+- customer analytics
 - business reporting
 
 ---
@@ -369,9 +431,23 @@ Finální analytický mini projekt.
 - CTE
 - subquery
 - EXISTS / NOT EXISTS
+- VIEW
 - window functions
 - ranking
 - analytické patterny
+
+---
+
+## ⚙️ Databázový backend mindset
+
+- transakce
+- ACID
+- COMMIT / ROLLBACK
+- triggery
+- procedury
+- indexy
+- fulltext search
+- optimalizace databází
 
 ---
 
@@ -388,7 +464,9 @@ Finální analytický mini projekt.
 
 Další plánovaný směr:
 
-- Excel
+- závěrečné opakování SQL
+- finální certifikační test
+- Úvod do datové analytiky
 - Power Query
 - Power BI
 - DAX
@@ -410,3 +488,7 @@ Nejde o produkční projekt, ale o:
 - budování analytického myšlení
 - portfolio projektů
 - dokumentaci progresu v oblasti data analytics
+
+Cílem není jen naučit se syntax SQL, ale chápat:
+
+👉 jak databáze fungují v reálném business prostředí.
