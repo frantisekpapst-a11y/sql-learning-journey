@@ -1,29 +1,46 @@
-📘 SQL Examples — Lekce 1–11 (ITnetwork Inspired)
+# 🗄️ SQL Examples — Lekce 1–23 (ITnetwork Inspired)
 
-Praktické SQL příklady pro procvičení základů databází, JOINů, agregací a poddotazů.
+Praktické SQL příklady pro procvičení databází, JOINů, agregací, transakcí, procedur, triggerů, fulltextu a cizích klíčů.
 
-📗 Lekce 1 — CREATE DATABASE / CREATE TABLE
-Query #1 — Vytvoření databáze
+---
+
+# 📘 Lekce 1 — CREATE DATABASE / CREATE TABLE
+
+## Query #1 — Vytvoření databáze
+
+```sql
 CREATE DATABASE FitnessCentrum;
-Výsledek
+```
 
-Vytvoří databázi FitnessCentrum.
+👉 vytvoří databázi `FitnessCentrum`
 
-Query #2 — Vytvoření tabulky
+---
+
+## Query #2 — Vytvoření tabulky
+
+```sql
 CREATE TABLE Clenove (
     Id INT PRIMARY KEY IDENTITY(1,1),
     Jmeno NVARCHAR(50),
     Vek INT,
     Tarif NVARCHAR(30)
 );
-Sloupec	Typ
-Id	INT
-Jmeno	NVARCHAR
-Vek	INT
-Tarif	NVARCHAR
+```
 
-📗 Lekce 2 — INSERT INTO
-Query #1 — Jeden řádek
+| Sloupec | Typ      |
+| ------- | -------- |
+| Id      | INT      |
+| Jmeno   | NVARCHAR |
+| Vek     | INT      |
+| Tarif   | NVARCHAR |
+
+---
+
+# 📘 Lekce 2 — INSERT INTO
+
+## Query #1 — Jeden řádek
+
+```sql
 INSERT INTO Clenove (
     Jmeno,
     Vek,
@@ -34,9 +51,13 @@ VALUES (
     28,
     'Premium'
 );
-Jmeno	Vek	Tarif
-Jan	28	Premium
-Query #2 — Více řádků
+```
+
+---
+
+## Query #2 — Více řádků
+
+```sql
 INSERT INTO Clenove (
     Jmeno,
     Vek,
@@ -46,41 +67,72 @@ VALUES
 ('Eva', 34, 'Basic'),
 ('Petr', 19, 'Student'),
 ('Lucie', 41, 'Premium');
-Výsledek
+```
 
-3 vložené řádky.
+👉 vloží 3 řádky
 
-📗 Lekce 3 — UPDATE
-Query #1 — Změna tarifu
+---
+
+# 📘 Lekce 3 — UPDATE
+
+## Query #1 — Změna tarifu
+
+```sql
 UPDATE Clenove
 SET Tarif = 'Standard'
 WHERE Tarif = 'Basic';
-Původní	Nový
-Basic	Standard
-Query #2 — Zvýšení věku
+```
+
+---
+
+## Query #2 — Zvýšení věku
+
+```sql
 UPDATE Clenove
 SET Vek = Vek + 1
 WHERE Jmeno = 'Petr';
+```
 
-📗 Lekce 4 — DELETE / TRUNCATE / DROP
-Query #1 — DELETE
+---
+
+# 📘 Lekce 4 — DELETE / TRUNCATE / DROP
+
+## Query #1 — DELETE
+
+```sql
 DELETE FROM Clenove
 WHERE Aktivni = 0;
+```
 
 👉 smaže pouze vybrané řádky
 
-Query #2 — TRUNCATE
+---
+
+## Query #2 — TRUNCATE
+
+```sql
 TRUNCATE TABLE Clenove;
+```
 
-👉 smaže všechna data
+👉 smaže všechna data + resetuje IDENTITY
 
-Query #3 — DROP
+---
+
+## Query #3 — DROP
+
+```sql
 DROP TABLE Clenove;
+```
 
 👉 smaže tabulku kompletně
 
-📗 Lekce 5 — CRUD
-Query #1 — CRUD operace
+---
+
+# 📘 Lekce 5 — CRUD
+
+## Query #1 — CRUD operace
+
+```sql
 CREATE TABLE Produkty (
     Id INT PRIMARY KEY,
     Nazev NVARCHAR(50)
@@ -95,130 +147,192 @@ WHERE Id = 1;
 
 DELETE FROM Produkty
 WHERE Id = 1;
-CRUD	Význam
-Create	INSERT
-Read	SELECT
-Update	UPDATE
-Delete	DELETE
+```
 
-📗 Lekce 6 — SELECT / WHERE / LIKE / IN / BETWEEN
-Query #1 — SELECT *
+| CRUD   | Význam |
+| ------ | ------ |
+| Create | INSERT |
+| Read   | SELECT |
+| Update | UPDATE |
+| Delete | DELETE |
+
+---
+
+# 📘 Lekce 6 — SELECT / WHERE / LIKE / IN / BETWEEN
+
+## Query #1 — SELECT *
+
+```sql
 SELECT *
 FROM produkty;
-Query #2 — Konkrétní sloupce
-SELECT nazev, cena
-FROM produkty;
-Query #3 — WHERE
+```
+
+---
+
+## Query #2 — WHERE
+
+```sql
 SELECT *
 FROM produkty
 WHERE cena > 5000;
-Query #4 — AND
-SELECT *
-FROM produkty
-WHERE cena > 1000
-AND skladem > 5;
-Query #5 — OR
-SELECT *
-FROM produkty
-WHERE kategorie = 'Nábytek'
-OR cena > 20000;
-Query #6 — LIKE
+```
+
+---
+
+## Query #3 — LIKE
+
+```sql
 SELECT *
 FROM produkty
 WHERE nazev LIKE '%Samsung%';
-Query #7 — IN
+```
+
+---
+
+## Query #4 — IN
+
+```sql
 SELECT *
 FROM produkty
 WHERE kategorie IN ('Elektronika', 'Doplňky');
-Query #8 — BETWEEN
+```
+
+---
+
+## Query #5 — BETWEEN
+
+```sql
 SELECT *
 FROM produkty
 WHERE cena BETWEEN 1000 AND 10000;
-Query #9 — TOP
-SELECT TOP 3 *
-FROM produkty;
+```
 
-📗 Lekce 7 — ORDER BY / DISTINCT / NULL
-Query #1 — ORDER BY DESC
+---
+
+# 📘 Lekce 7 — ORDER BY / DISTINCT / NULL
+
+## Query #1 — ORDER BY DESC
+
+```sql
 SELECT *
 FROM produkty
 ORDER BY cena DESC;
-Query #2 — DISTINCT
+```
+
+---
+
+## Query #2 — DISTINCT
+
+```sql
 SELECT DISTINCT kategorie
 FROM produkty;
+```
 
 👉 unikátní hodnoty
 
-Query #3 — IS NULL
+---
+
+## Query #3 — IS NULL
+
+```sql
 SELECT *
 FROM produkty
 WHERE sleva IS NULL;
+```
 
-📗 Lekce 8 — GROUP BY / Agregace
-Query #1 — COUNT
+---
+
+# 📘 Lekce 8 — GROUP BY / Agregace
+
+## Query #1 — COUNT
+
+```sql
 SELECT COUNT(*) AS pocet_produktu
 FROM produkty;
-Query #2 — AVG
+```
+
+---
+
+## Query #2 — AVG
+
+```sql
 SELECT AVG(cena) AS prumerna_cena
 FROM produkty;
-Query #3 — SUM + GROUP BY
+```
+
+---
+
+## Query #3 — SUM + GROUP BY
+
+```sql
 SELECT
     kategorie,
     SUM(cena) AS celkem
 FROM produkty
 GROUP BY kategorie;
-Query #4 — HAVING
+```
+
+---
+
+## Query #4 — HAVING
+
+```sql
 SELECT
     kategorie,
     COUNT(*) AS pocet
 FROM produkty
 GROUP BY kategorie
 HAVING COUNT(*) > 3;
+```
 
-📗 Lekce 9 — JOIN
-Query #1 — INNER JOIN
+---
+
+# 📘 Lekce 9 — JOIN
+
+## Query #1 — INNER JOIN
+
+```sql
 SELECT
     c.customer_name,
     o.amount
 FROM customers c
 INNER JOIN orders o
     ON c.customer_id = o.customer_id;
-Query #2 — LEFT JOIN
+```
+
+---
+
+## Query #2 — LEFT JOIN
+
+```sql
 SELECT
     c.customer_name,
     o.amount
 FROM customers c
 LEFT JOIN orders o
     ON c.customer_id = o.customer_id;
-Query #3 — LEFT JOIN + COUNT
-SELECT
-    c.customer_name,
-    COUNT(o.order_id) AS total_orders
-FROM customers c
-LEFT JOIN orders o
-    ON c.customer_id = o.customer_id
-GROUP BY c.customer_name;
+```
 
-👉 správné použití COUNT u LEFT JOIN
+---
 
-Query #4 — Zákazníci bez objednávky
+## Query #3 — Zákazníci bez objednávky
+
+```sql
 SELECT
     c.customer_name
 FROM customers c
 LEFT JOIN orders o
     ON c.customer_id = o.customer_id
 WHERE o.order_id IS NULL;
-Query #5 — COALESCE
-SELECT
-    c.customer_name,
-    COALESCE(SUM(o.amount), 0) AS revenue
-FROM customers c
-LEFT JOIN orders o
-    ON c.customer_id = o.customer_id
-GROUP BY c.customer_name;
+```
 
-📗 Lekce 10 — JOIN přes více tabulek / M:N
-Query #1 — Více JOINů
+---
+
+# 📘 Lekce 10 — M:N / Více JOINů
+
+## Query #1 — Více JOINů
+
+```sql
 SELECT
     s.name,
     c.course_name
@@ -227,23 +341,13 @@ JOIN student_courses sc
     ON s.student_id = sc.student_id
 JOIN courses c
     ON sc.course_id = c.course_id;
-Query #2 — LEFT JOIN přes M:N
-SELECT
-    s.name,
-    c.course_name
-FROM students s
-LEFT JOIN student_courses sc
-    ON s.student_id = sc.student_id
-LEFT JOIN courses c
-    ON sc.course_id = c.course_id;
-Query #3 — Studenti bez kurzu
-SELECT
-    s.name
-FROM students s
-LEFT JOIN student_courses sc
-    ON s.student_id = sc.student_id
-WHERE sc.course_id IS NULL;
-Query #4 — Počet kurzů na studenta
+```
+
+---
+
+## Query #2 — Počet kurzů na studenta
+
+```sql
 SELECT
     s.name,
     COUNT(c.course_id) AS number_courses
@@ -253,36 +357,15 @@ LEFT JOIN student_courses sc
 LEFT JOIN courses c
     ON sc.course_id = c.course_id
 GROUP BY s.name;
-Query #5 — Podmínka v ON
-SELECT
-    s.name,
-    c.course_name
-FROM students s
-LEFT JOIN student_courses sc
-    ON s.student_id = sc.student_id
-LEFT JOIN courses c
-    ON sc.course_id = c.course_id
-   AND c.course_name = 'SQL';
+```
 
-👉 LEFT JOIN zůstane zachovaný
+---
 
-📗 Lekce 11 — Poddotazy / EXISTS / CTE
-Query #1 — Poddotaz v WHERE
-SELECT *
-FROM orders
-WHERE amount > (
-    SELECT AVG(amount)
-    FROM orders
-);
-Query #2 — IN
-SELECT *
-FROM orders
-WHERE customer_id IN (
-    SELECT customer_id
-    FROM customers
-    WHERE country = 'DE'
-);
-Query #3 — EXISTS
+# 📘 Lekce 11 — Poddotazy / EXISTS / CTE
+
+## Query #1 — EXISTS
+
+```sql
 SELECT *
 FROM customers c
 WHERE EXISTS (
@@ -290,28 +373,13 @@ WHERE EXISTS (
     FROM orders o
     WHERE c.customer_id = o.customer_id
 );
-Query #4 — NOT EXISTS
-SELECT *
-FROM customers c
-WHERE NOT EXISTS (
-    SELECT *
-    FROM orders o
-    WHERE c.customer_id = o.customer_id
-);
-Query #5 — Poddotaz jako tabulka
-SELECT
-    c.name,
-    revenue.total_revenue
-FROM (
-    SELECT
-        customer_id,
-        SUM(amount) AS total_revenue
-    FROM orders
-    GROUP BY customer_id
-) revenue
-JOIN customers c
-    ON revenue.customer_id = c.customer_id;
-Query #6 — CTE
+```
+
+---
+
+## Query #2 — CTE
+
+```sql
 WITH customer_revenue AS (
     SELECT
         customer_id,
@@ -326,50 +394,54 @@ SELECT
 FROM customer_revenue cr
 JOIN customers c
     ON cr.customer_id = c.customer_id;
-Query #7 — Maximum přes CTE
-WITH customer_revenue AS (
-    SELECT
-        customer_id,
-        SUM(amount) AS total_revenue
-    FROM orders
-    GROUP BY customer_id
-),
+```
 
-max_revenue AS (
-    SELECT
-        MAX(total_revenue) AS max_value
-    FROM customer_revenue
-)
+---
 
-SELECT
-    c.name,
-    cr.total_revenue
-FROM customer_revenue cr
-JOIN customers c
-    ON cr.customer_id = c.customer_id
-CROSS JOIN max_revenue mr
-WHERE cr.total_revenue = mr.max_value;
+# 📘 Lekce 12 — ALTER TABLE
 
-👉 zákazník s nejvyšším revenue
+## Přidání sloupce
 
-🔧 ALTER TABLE
-Přidání sloupce
+```sql
 ALTER TABLE [Komentare]
 ADD [Palce] INT;
-Změna datového typu
+```
+
+---
+
+## Změna datového typu
+
+```sql
 ALTER TABLE [Komentare]
 ALTER COLUMN [Palce] BIGINT;
-Odebrání sloupce
+```
+
+---
+
+## Odebrání sloupce
+
+```sql
 ALTER TABLE [Komentare]
 DROP COLUMN [Palce];
+```
 
-🔢 DBCC CHECKIDENT
+---
+
+# 📘 Lekce 13 — DBCC CHECKIDENT
+
+```sql
 DBCC CHECKIDENT ('Uzivatele', RESEED, 1233);
+```
 
-👉 další vložené ID bude 1234
+👉 další vložené ID bude `1234`
 
-🔄 TRANSAKCE
-Commit
+---
+
+# 📘 Lekce 14 — TRANSAKCE
+
+## COMMIT
+
+```sql
 BEGIN TRANSACTION;
 
 UPDATE [Ucty]
@@ -381,62 +453,52 @@ SET [Balance] = [Balance] + 100
 WHERE [Id] = 2;
 
 COMMIT TRANSACTION;
-Rollback
+```
+
+---
+
+## ROLLBACK
+
+```sql
 BEGIN TRANSACTION;
 
 DELETE FROM [Uzivatele]
 WHERE [Id] = 5;
 
 ROLLBACK TRANSACTION;
+```
 
 👉 změna se neuloží
 
-👁️ VIEW
-Vytvoření view
+---
+
+# 📘 Lekce 15 — VIEW / INDEXY
+
+## VIEW
+
+```sql
 CREATE VIEW AktivniUzivatele AS
 SELECT *
 FROM [Uzivatele]
 WHERE [Aktivni] = 1;
-Použití view
-SELECT *
-FROM AktivniUzivatele;
+```
 
-⚡ INDEXY
-Jednosloupcový index
+---
+
+## INDEX
+
+```sql
 CREATE INDEX IDX_Clanky_Url
 ON [Clanky] ([Url]);
-Vícesloupcový index
-CREATE INDEX IDX_User_Name
-ON [Users] ([FirstName], [LastName]);
+```
 
-🔍 HAVING
-SELECT
-    [CustomerId],
-    SUM([Amount]) AS [Revenue]
-FROM [Orders]
-GROUP BY [CustomerId]
-HAVING SUM([Amount]) > 1000;
+---
 
-⚡ WHERE vs HAVING
-WHERE
-SELECT *
-FROM [Orders]
-WHERE [Amount] > 1000;
+# 📘 Lekce 16 — TRIGGERY
 
-👉 filtruje řádky
+## AFTER INSERT
 
-HAVING
-SELECT
-    [CustomerId],
-    SUM([Amount])
-FROM [Orders]
-GROUP BY [CustomerId]
-HAVING SUM([Amount]) > 1000;
-
-👉 filtruje skupiny
-
-⚙️ TRIGGERY
-AFTER INSERT Trigger
+```sql
 CREATE TRIGGER AfterInsertUsers
 ON [Users]
 AFTER INSERT
@@ -444,7 +506,13 @@ AS
 BEGIN
     PRINT 'Nový uživatel vložen';
 END;
-AFTER DELETE Trigger
+```
+
+---
+
+## AFTER DELETE
+
+```sql
 CREATE TRIGGER AfterDeleteUsers
 ON [Users]
 AFTER DELETE
@@ -452,61 +520,61 @@ AS
 BEGIN
     PRINT 'Uživatel smazán';
 END;
-INSTEAD OF INSERT Trigger
-CREATE TRIGGER InsteadOfInsertUsers
-ON [Users]
-INSTEAD OF INSERT
-AS
-BEGIN
-    PRINT 'INSERT byl nahrazen triggerem';
-END;
+```
 
-📥 inserted / deleted
-inserted
-SELECT *
-FROM inserted;
+---
 
-👉 nové hodnoty
+# 📘 Lekce 17 — DECLARE / IF ELSE
 
-deleted
-SELECT *
-FROM deleted;
+## DECLARE
 
-👉 staré hodnoty
-
-🧠 DECLARE
+```sql
 DECLARE @Pocet INT;
 
 SET @Pocet = 10;
 
 SELECT @Pocet;
-⚙️ IF ELSE
+```
+
+---
+
+## IF ELSE
+
+```sql
 IF @Pocet > 10
     SELECT 'Velke cislo';
 ELSE
     SELECT 'Male cislo';
+```
 
-📦 STORED PROCEDURE
-Vytvoření procedury
+---
+
+# 📘 Lekce 18 — STORED PROCEDURES
+
+## Vytvoření procedury
+
+```sql
 CREATE PROCEDURE GetUsers
 AS
 BEGIN
     SELECT *
     FROM [Users];
 END;
-Spuštění procedury
-EXEC GetUsers;
-ALTER PROCEDURE
-ALTER PROCEDURE GetUsers
-AS
-BEGIN
-    SELECT [Id], [Name]
-    FROM [Users];
-END;
-DROP PROCEDURE
-DROP PROCEDURE GetUsers;
+```
 
-📥 Procedura s parametrem
+---
+
+## EXEC
+
+```sql
+EXEC GetUsers;
+```
+
+---
+
+## Procedura s parametrem
+
+```sql
 CREATE PROCEDURE GetUsersByCity
     @City NVARCHAR(50)
 AS
@@ -515,26 +583,13 @@ BEGIN
     FROM [Users]
     WHERE [City] = @City;
 END;
-Volání procedury
-EXEC GetUsersByCity @City = 'Praha';
+```
 
-📤OUTPUT parametr
-Procedura
-CREATE PROCEDURE CountUsers
-    @Count INT OUT
-AS
-BEGIN
-    SELECT @Count = COUNT(*)
-    FROM [Users];
-END;
-Volání
-DECLARE @Result INT;
+---
 
-EXEC CountUsers @Count = @Result OUT;
+# 📘 Lekce 19 — TRY CATCH
 
-SELECT @Result;
-
-🧠 TRY CATCH
+```sql
 BEGIN TRY
     SELECT 1 / 0;
 END TRY
@@ -544,48 +599,53 @@ BEGIN CATCH
         ERROR_NUMBER() AS [ErrorNumber],
         ERROR_MESSAGE() AS [ErrorMessage];
 END CATCH;
+```
 
-👤 LOGIN + USER
-LOGIN
+---
+
+# 📘 Lekce 20 — LOGIN / USER / GRANT
+
+## LOGIN
+
+```sql
 CREATE LOGIN test
 WITH PASSWORD = 'Test1234';
-USER
+```
+
+---
+
+## USER
+
+```sql
 CREATE USER test
 FOR LOGIN test;
+```
 
-🔐 GRANT
+---
+
+## GRANT
+
+```sql
 GRANT SELECT, EXECUTE
 ON DATABASE::Firma
 TO test;
+```
 
-🔄 EXECUTE AS USER
-EXECUTE AS USER = 'test';
+---
 
-↩️ REVERT
-REVERT;
+# 📘 Lekce 21 — FULLTEXT SEARCH
 
-🔍 LIKE
-%
-SELECT *
-FROM [Users]
-WHERE [Email] LIKE '%@gmail.com';
+## Fulltext katalog
 
-👉 libovolný počet znaků
-
-_
-SELECT *
-FROM [Users]
-WHERE [Name] LIKE 'D____';
-
-👉 jeden znak
-
-🚀 FULLTEXT SEARCH
-Fulltext katalog
+```sql
 CREATE FULLTEXT CATALOG ClankyCatalog;
-Unique index
-CREATE UNIQUE INDEX FulltextId
-ON [Clanky]([Id]);
-Fulltext index
+```
+
+---
+
+## Fulltext index
+
+```sql
 CREATE FULLTEXT INDEX ON [Clanky]
 (
     [Obsah] LANGUAGE 1029,
@@ -593,45 +653,97 @@ CREATE FULLTEXT INDEX ON [Clanky]
 )
 KEY INDEX [FulltextId]
 ON [ClankyCatalog];
+```
 
-🧠 CONTAINS
+---
+
+## CONTAINS
+
+```sql
 SELECT *
 FROM [Clanky]
 WHERE CONTAINS([Obsah], 'hra');
+```
 
 👉 přesná fulltextová shoda
 
-🧠 FREETEXT
+---
+
+## FREETEXT
+
+```sql
 SELECT *
 FROM [Clanky]
 WHERE FREETEXT([Obsah], 'hra');
+```
 
 👉 významové hledání
 
-📊 CONTAINSTABLE
-SELECT
-    [CT].[RANK],
-    [C].[Titulek]
-FROM [Clanky] AS [C]
-INNER JOIN
-    CONTAINSTABLE([Clanky], [Obsah], 'hra') AS [CT]
-    ON [C].[Id] = [CT].[KEY]
-ORDER BY [CT].[RANK] DESC;
+---
 
-📊 FREETEXTTABLE
-SELECT
-    [FT].[RANK],
-    [C].[Titulek]
-FROM [Clanky] AS [C]
-INNER JOIN
-    FREETEXTTABLE([Clanky], [Obsah], 'hra') AS [FT]
-    ON [C].[Id] = [FT].[KEY]
-ORDER BY [FT].[RANK] DESC;
+# 📘 Lekce 22 — Cizí klíče 1
 
-🌍 LANGUAGE 1029
-LANGUAGE 1029
+## FOREIGN KEY
 
-👉 český jazyk
-👉 skloňování
-👉 časování
-👉 kořeny slov
+```sql
+ALTER TABLE [Komentare]
+    ADD CONSTRAINT [KomentareClanek]
+    FOREIGN KEY (ClanekId)
+    REFERENCES [Clanky]([Id])
+    ON UPDATE CASCADE
+    ON DELETE CASCADE;
+```
+
+👉 při smazání článku se smažou i komentáře
+
+---
+
+## NOT NULL pro FK
+
+```sql
+ALTER TABLE [Komentare]
+ALTER COLUMN [ClanekId] INT NOT NULL;
+```
+
+---
+
+# 📘 Lekce 23 — Cizí klíče 2
+
+## SET NULL
+
+```sql
+ALTER TABLE [Komentare]
+    ADD CONSTRAINT [KomentareClanek]
+    FOREIGN KEY (ClanekId)
+    REFERENCES [Clanky]([Id])
+    ON UPDATE SET NULL
+    ON DELETE SET NULL;
+```
+
+👉 po smazání parent záznamu nastaví FK na NULL
+
+---
+
+## NO ACTION
+
+```sql
+ALTER TABLE [Komentare]
+    ADD CONSTRAINT [KomentareClanek]
+    FOREIGN KEY (ClanekId)
+    REFERENCES [Clanky]([Id])
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION;
+```
+
+👉 zabrání smazání parent záznamu
+
+---
+
+## DROP CONSTRAINT
+
+```sql
+ALTER TABLE [Komentare]
+DROP CONSTRAINT [KomentareClanek];
+```
+
+👉 smaže existující vztah
