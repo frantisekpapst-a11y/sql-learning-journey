@@ -12,14 +12,12 @@ Dostat se na úroveň junior data analytika a naučit se řešit reálné busine
 ```md
 📂 sql-learning-journey
  ┣ 📄 README.md
- ┣ 📂 sql-examples-itnetwork-certification
- ┣ 📂 sql-fiddle-examples
  ┣ 📂 sql-case-studies-itnetwork-certification
  ┣ 📂 sql-case-studies-original
- ┣ 📂 sql-mini-tests
  ┣ 📂 sql-cheatsheets
- ┗ 📂 sql-notes
-```
+ ┣ 📂 sql-examples
+ ┣ 📂 sql-mini-tests
+  ```
 
 ---
 
