@@ -21,132 +21,6 @@ Dostat se na úroveň junior data analytika a naučit se řešit reálné busine
 
 ---
 
-# 📘 SQL Examples
-
-Praktické SQL ukázky inspirované ITnetwork learning path.
-
-## 📂 `sql-examples-itnetwork-certification`
-
-Obsahuje:
-
-- CREATE DATABASE
-- CREATE TABLE
-- INSERT INTO
-- UPDATE
-- DELETE / TRUNCATE / DROP
-- SELECT
-- WHERE
-- LIKE
-- IN
-- BETWEEN
-- ORDER BY
-- TOP
-- COUNT / SUM / AVG / MIN / MAX
-- GROUP BY
-- HAVING
-- JOIN
-- subquery
-- EXISTS / NOT EXISTS
-- CTE
-- ALTER TABLE
-- VIEW
-- INDEXY
-- TRANSAKCE
-- TRIGGERY
-- PROCEDURY
-- FULLTEXT SEARCH
-- FOREIGN KEYS
-
----
-
-## 📂 `sql-fiddle-examples`
-
-Praktické SQL playground příklady a experimenty.
-
-Zaměřeno na:
-
-- analytické patterny
-- testování JOINů
-- práci s agregacemi
-- business reporting
-- debugging SQL dotazů
-- modelování databází
-- SQL experimentation
-
----
-
-# 📄 SQL Cheatsheets
-
-## 📘 `sql-cheatsheet-itnetwork-certification.md`
-
-Kompletní přehled SQL syntaxe a poznámek z ITnetwork learning journey.
-
-Obsahuje:
-
-- syntaxe SQL
-- SQL mindset
-- JOIN patterny
-- agregace
-- poddotazy
-- CTE
-- VIEW
-- triggery
-- procedury
-- transakce
-- fulltext search
-- indexy
-- foreign keys
-
----
-
-## 📘 `sql-cheatsheet.md`
-
-Vlastní rozšířený SQL cheatsheet.
-
-Obsahuje:
-
-- business reporting patterny
-- customer analytics
-- revenue reporting
-- SQL debugging
-- performance mindset
-- databázové best practices
-- analytické SQL workflow
-
----
-
-# 🧪 SQL Mini Tests
-
-## 📘 `sql-itnetwork-certification-mini-tests.md`
-
-Mini testy k jednotlivým lekcím.
-
-Zaměřeno na:
-
-- procvičení syntaxe
-- pochopení SQL logiky
-- práci s daty
-- analytické přemýšlení
-- databázový design
-
----
-
-## 📘 `sql-cheatsheet-mini-tests.md`
-
-Vlastní opakovací mini testy.
-
-Obsahují:
-
-- JOIN otázky
-- agregace
-- business scénáře
-- SQL debugging
-- foreign keys
-- transakce
-- rozdíly mezi SQL patterny
-
----
-
 # 📊 SQL Case Studies — ITnetwork Certification
 
 Série realistických business scénářů zaměřených na datovou analytiku, reporting a databázový design.
@@ -290,7 +164,7 @@ Komplexnější business case propojující databázový design a business logik
 
 ---
 
-# 📊 SQL Original Case Studies
+# 📊 SQL Case Studies Original
 
 Vlastní analytické mini projekty zaměřené na business reporting a customer analytics.
 
@@ -387,6 +261,136 @@ Vlastní analytické mini projekty zaměřené na business reporting a customer 
 - komplexní CTE pipeline
 
 ---
+
+# 📘 SQL Examples
+
+Praktické SQL ukázky inspirované ITnetwork learning path.
+
+## 📂 `sql-examples-itnetwork-certification`
+
+Obsahuje:
+
+- CREATE DATABASE
+- CREATE TABLE
+- INSERT INTO
+- UPDATE
+- DELETE / TRUNCATE / DROP
+- SELECT
+- WHERE
+- LIKE
+- IN
+- BETWEEN
+- ORDER BY
+- TOP
+- COUNT / SUM / AVG / MIN / MAX
+- GROUP BY
+- HAVING
+- JOIN
+- subquery
+- EXISTS / NOT EXISTS
+- CTE
+- ALTER TABLE
+- VIEW
+- INDEXY
+- TRANSAKCE
+- TRIGGERY
+- PROCEDURY
+- FULLTEXT SEARCH
+- FOREIGN KEYS
+
+---
+
+## 📂 `sql-fiddle-examples`
+
+Praktické SQL playground příklady a experimenty.
+
+Zaměřeno na:
+
+- analytické patterny
+- testování JOINů
+- práci s agregacemi
+- business reporting
+- debugging SQL dotazů
+- modelování databází
+- SQL experimentation
+
+---
+
+# 📄 SQL Cheatsheets
+
+## 📘 `sql-cheatsheet-itnetwork-certification.md`
+
+Kompletní přehled SQL syntaxe a poznámek z ITnetwork learning journey.
+
+Obsahuje:
+
+- syntaxe SQL
+- SQL mindset
+- JOIN patterny
+- agregace
+- poddotazy
+- CTE
+- VIEW
+- triggery
+- procedury
+- transakce
+- fulltext search
+- indexy
+- foreign keys
+
+---
+
+## 📘 `sql-cheatsheet.md`
+
+Vlastní rozšířený SQL cheatsheet.
+
+Obsahuje:
+
+- business reporting patterny
+- customer analytics
+- revenue reporting
+- SQL debugging
+- performance mindset
+- databázové best practices
+- analytické SQL workflow
+
+---
+
+# 🧪 SQL Mini Tests
+
+## 📘 `sql-itnetwork-certification-mini-tests.md`
+
+Mini testy k jednotlivým lekcím.
+
+Zaměřeno na:
+
+- procvičení syntaxe
+- pochopení SQL logiky
+- práci s daty
+- analytické přemýšlení
+- databázový design
+
+---
+
+## 📘 `sql-cheatsheet-mini-tests.md`
+
+Vlastní opakovací mini testy.
+
+Obsahují:
+
+- JOIN otázky
+- agregace
+- business scénáře
+- SQL debugging
+- foreign keys
+- transakce
+- rozdíly mezi SQL patterny
+
+---
+
+
+
+
 
 # 🧠 Co se v repozitáři učím
 
