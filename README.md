@@ -17,6 +17,7 @@ Dostat se na úroveň junior data analytika a naučit se řešit reálné busine
  ┣ 📂 sql-cheatsheets
  ┣ 📂 sql-examples
  ┣ 📂 sql-mini-tests
+ ┣ 📄 sql-certificates.pdf
   ```
 
 ---
