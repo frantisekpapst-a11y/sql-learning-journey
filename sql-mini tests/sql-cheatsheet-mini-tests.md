@@ -1,5 +1,7 @@
 📘 SQL Mini Testy — Kompletní sada (Lekce 1–23)
+
 📗 Lekce 1 — CREATE DATABASE / CREATE TABLE
+
 1.
 
 K čemu slouží PRIMARY KEY?
@@ -61,6 +63,7 @@ Rozdíl DATETIME vs DATETIME2?
 ✅ DATETIME2 je přesnější a modernější.
 
 📗 Lekce 2 — INSERT INTO
+
 11.
 
 Jak vložíš více řádků?
@@ -124,6 +127,7 @@ Jak vložíš datum?
 ✅ '2025-01-01'
 
 📗 Lekce 3 — UPDATE
+
 21.
 
 Co dělá UPDATE?
@@ -187,6 +191,7 @@ Co vrátí UPDATE?
 ✅ Počet upravených řádků.
 
 📗 Lekce 4 — DELETE / TRUNCATE / DROP
+
 31.
 
 Co dělá DELETE?
@@ -250,6 +255,7 @@ Kdy použít DROP TABLE?
 ✅ Když tabulku už nepotřebujeme.
 
 📗 Lekce 5 — CRUD
+
 41.
 
 Co znamená CRUD?
@@ -311,6 +317,7 @@ Co je SQL mindset?
 ✅ Říkáme co chceme, ne jak.
 
 📗 Lekce 6 — SELECT / WHERE / LIKE
+
 51.
 
 Co dělá SELECT?
@@ -372,6 +379,7 @@ Co znamená DESC?
 ✅ Sestupné řazení.
 
 📗 Lekce 7 — GROUP BY / HAVING
+
 61.
 
 Co dělá GROUP BY?
@@ -436,6 +444,7 @@ HAVING běží před nebo po GROUP BY?
 ✅ Po GROUP BY.
 
 📗 Lekce 8–10 — JOIN
+
 71.
 
 K čemu slouží JOIN?
@@ -497,6 +506,7 @@ Co dělá COALESCE?
 ✅ NULL → hodnota.
 
 📗 Lekce 11 — Poddotazy / CTE
+
 81.
 
 Co je poddotaz?
@@ -558,6 +568,7 @@ Proč používat CTE?
 ✅ Rozdělení problému.
 
 📗 Lekce 12–16 — ALTER / INDEXY / VIEW / TRANSAKCE
+
 91.
 
 K čemu slouží ALTER TABLE?
@@ -619,6 +630,7 @@ Výchozí isolation level?
 ✅ READ COMMITTED.
 
 📗 Lekce 17–18 — Triggery / HAVING
+
 101.
 
 Na co trigger nereaguje?
@@ -680,6 +692,7 @@ WHERE může obsahovat agregace?
 ✅ Ne.
 
 📗 Lekce 19–20 — Procedury / TRY CATCH
+
 111.
 
 Co je stored procedure?
@@ -741,6 +754,7 @@ Co dělá REVERT?
 ✅ Návrat uživatele.
 
 📗 Lekce 21 — Fulltext / Login
+
 121.
 
 Rozdíl LOGIN vs USER?
@@ -802,6 +816,7 @@ Co dělá GRANT?
 ✅ Přiděluje oprávnění.
 
 📗 Lekce 22–23 — Cizí klíče
+
 131.
 
 Co je FOREIGN KEY?
