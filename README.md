@@ -21,6 +21,76 @@ Dostat se na úroveň junior data analytika a naučit se řešit reálné busine
 
 ---
 
+# 🧠 Co se v repozitáři učím
+
+## 🔰 SQL základy
+
+- SELECT
+- WHERE
+- ORDER BY
+- INSERT / UPDATE / DELETE
+- datové typy
+- CRUD operace
+
+---
+
+## 🔗 Relační databáze
+
+- PRIMARY KEY
+- FOREIGN KEY
+- INNER JOIN
+- LEFT JOIN
+- M:N vztahy
+- vazební tabulky
+- integrita dat
+
+---
+
+## 📊 Datová analytika
+
+- GROUP BY
+- HAVING
+- agregace
+- revenue reporting
+- customer analytics
+- business reporting
+
+---
+
+## 🚀 Pokročilé SQL
+
+- CTE
+- subquery
+- EXISTS / NOT EXISTS
+- VIEW
+- window functions
+- ranking
+- analytické patterny
+
+---
+
+## ⚙️ Databázový backend mindset
+
+- transakce
+- ACID
+- COMMIT / ROLLBACK
+- triggery
+- procedury
+- indexy
+- fulltext search
+- optimalizace databází
+
+---
+
+# 🛠 Používané nástroje
+
+- MS SQL Server
+- SQLize Online Playground
+- GitHub
+- VS Code
+
+---
+
 # 📊 SQL Case Studies — ITnetwork Certification
 
 Série realistických business scénářů zaměřených na datovou analytiku, reporting a databázový design.
@@ -262,60 +332,6 @@ Vlastní analytické mini projekty zaměřené na business reporting a customer 
 
 ---
 
-# 📘 SQL Examples
-
-Praktické SQL ukázky inspirované ITnetwork learning path.
-
-## 📂 `sql-examples-itnetwork-certification`
-
-Obsahuje:
-
-- CREATE DATABASE
-- CREATE TABLE
-- INSERT INTO
-- UPDATE
-- DELETE / TRUNCATE / DROP
-- SELECT
-- WHERE
-- LIKE
-- IN
-- BETWEEN
-- ORDER BY
-- TOP
-- COUNT / SUM / AVG / MIN / MAX
-- GROUP BY
-- HAVING
-- JOIN
-- subquery
-- EXISTS / NOT EXISTS
-- CTE
-- ALTER TABLE
-- VIEW
-- INDEXY
-- TRANSAKCE
-- TRIGGERY
-- PROCEDURY
-- FULLTEXT SEARCH
-- FOREIGN KEYS
-
----
-
-## 📂 `sql-fiddle-examples`
-
-Praktické SQL playground příklady a experimenty.
-
-Zaměřeno na:
-
-- analytické patterny
-- testování JOINů
-- práci s agregacemi
-- business reporting
-- debugging SQL dotazů
-- modelování databází
-- SQL experimentation
-
----
-
 # 📄 SQL Cheatsheets
 
 ## 📘 `sql-cheatsheet-itnetwork-certification.md`
@@ -388,77 +404,57 @@ Obsahují:
 
 ---
 
+# 📘 SQL Examples
 
+Praktické SQL ukázky inspirované ITnetwork learning path.
 
+## 📂 `sql-examples-itnetwork-certification`
 
+Obsahuje:
 
-# 🧠 Co se v repozitáři učím
-
-## 🔰 SQL základy
-
+- CREATE DATABASE
+- CREATE TABLE
+- INSERT INTO
+- UPDATE
+- DELETE / TRUNCATE / DROP
 - SELECT
 - WHERE
+- LIKE
+- IN
+- BETWEEN
 - ORDER BY
-- INSERT / UPDATE / DELETE
-- datové typy
-- CRUD operace
-
----
-
-## 🔗 Relační databáze
-
-- PRIMARY KEY
-- FOREIGN KEY
-- INNER JOIN
-- LEFT JOIN
-- M:N vztahy
-- vazební tabulky
-- integrita dat
-
----
-
-## 📊 Datová analytika
-
+- TOP
+- COUNT / SUM / AVG / MIN / MAX
 - GROUP BY
 - HAVING
-- agregace
-- revenue reporting
-- customer analytics
-- business reporting
-
----
-
-## 🚀 Pokročilé SQL
-
-- CTE
+- JOIN
 - subquery
 - EXISTS / NOT EXISTS
+- CTE
+- ALTER TABLE
 - VIEW
-- window functions
-- ranking
+- INDEXY
+- TRANSAKCE
+- TRIGGERY
+- PROCEDURY
+- FULLTEXT SEARCH
+- FOREIGN KEYS
+
+---
+
+## 📂 `sql-fiddle-examples`
+
+Praktické SQL playground příklady a experimenty.
+
+Zaměřeno na:
+
 - analytické patterny
-
----
-
-## ⚙️ Databázový backend mindset
-
-- transakce
-- ACID
-- COMMIT / ROLLBACK
-- triggery
-- procedury
-- indexy
-- fulltext search
-- optimalizace databází
-
----
-
-# 🛠 Používané nástroje
-
-- MS SQL Server
-- SQLize Online Playground
-- GitHub
-- VS Code
+- testování JOINů
+- práci s agregacemi
+- business reporting
+- debugging SQL dotazů
+- modelování databází
+- SQL experimentation
 
 ---
 
