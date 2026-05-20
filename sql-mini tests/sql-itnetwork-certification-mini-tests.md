@@ -2,6 +2,7 @@
 Posledních 15 otázek je ze závěrečného testu části SQL.
 
 📘Blok 1 — Základy SQL
+
 1. Pokud chceme pomocí SQL získat data:
 
 ✅ Řekneme pouze, co má být výsledkem.
@@ -35,6 +36,7 @@ Posledních 15 otázek je ze závěrečného testu části SQL.
 ✅ Pouze část struktury databáze.
 
 📘 Blok 2 — SELECT, WHERE, LIKE, agregace
+
 9. Hodnota NULL označuje:
 
 ✅ Ještě nezadanou hodnotu.
@@ -71,6 +73,7 @@ WHERE [PocetClanku] > 0;
 ✅ Vrátí počet uživatelů, kteří napsali nějaký článek.
 
 📘 Blok 3 — JOIN, poddotazy, vztahy
+
 17. Dotaz přes více tabulek provedeme pomocí příkazu:
 
 ✅ JOIN
@@ -104,6 +107,7 @@ WHERE [PocetClanku] > 0;
 ✅ Použijeme aliasy.
 
 📘 Blok 4 — Indexy, transakce, VIEW
+
 25. Pomocný index:
 
 ✅ Může významně zrychlit čtení z tabulky pomocí SELECT.
@@ -140,6 +144,7 @@ DBCC CHECKIDENT ('Uzivatele', reseed, 1233);
 ✅ Měnit strukturu již existující databáze.
 
 📘 Blok 5 — Triggery, HAVING, proměnné
+
 33. Triggery nereagují na:
 
 ✅ SELECT
@@ -181,6 +186,7 @@ END;
 ✅ Nesmí obsahovat agregační funkce.
 
 📘 Blok 6 — Stored procedures
+
 41. Co je špatně na proceduře:
 CREATE PROCEDURE PocetZamestnancu
     @NazevOddeleni NVARCHAR(50),
@@ -228,6 +234,7 @@ END;
 ✅ DROP PROCEDURE DulezitaProcedura;
 
 📘 Blok 7 — Fulltext, účty, transakce
+
 49. Mezi fulltext funkce NEpatří:
 
 ✅ EQUALS
@@ -268,6 +275,7 @@ WHERE CONTAINS([PamatkaNazev], 'Karlův most');
 ✅ K definování míry, do jaké musí být jedna transakce izolována od změn dat provedených jinými souběžně běžícími transakcemi.
 
 📘 Blok 8 — Cizí klíče
+
 57. Cizí klíč je:
 
 ✅ Sloupec tabulky přímo spojený se sloupcem jiné tabulky.
