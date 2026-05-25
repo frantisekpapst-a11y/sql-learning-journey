@@ -93,7 +93,7 @@ Dostat se na úroveň junior data analytika a naučit se řešit reálné busine
 
 # 📊 SQL Case Studies — ITnetwork Certification
 
-Série realistických business scénářů zaměřených na datovou analytiku, reporting a databázový design.
+Série realistických business scénářů zaměřených na datovou analytiku, reporting a databázový design inspirovaných certifikovaným kurzem itnetwork Datová analýza od A do Z, část SQL. Nejedná se tedy o case studies nebo příklady řešené přímo v rámci tohoto kurzu.
 
 ---
 
