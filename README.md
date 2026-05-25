@@ -88,7 +88,6 @@ Dostat se na úroveň junior data analytika a naučit se řešit reálné busine
 - MS SQL Server
 - SQLize Online Playground
 - GitHub
-- VS Code
 
 ---
 
