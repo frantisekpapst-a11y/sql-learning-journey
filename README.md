@@ -491,3 +491,6 @@ Nejde o produkční projekt, ale o:
 Cílem není jen naučit se syntax SQL, ale chápat:
 
 👉 jak databáze fungují v reálném business prostředí.
+
+Repozitář používá pouze anonymizovaná nebo ukázková data určená pro studijní a portfolio účely.
+
