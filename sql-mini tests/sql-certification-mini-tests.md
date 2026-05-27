@@ -1,7 +1,5 @@
 🧠 SQL mini testy z kurzu itnetwork Datová analýza od A do Z.
 
-Posledních 15 otázek je ze závěrečného testu části SQL.
-
 📘Blok 1 — Základy SQL
 
 1. Pokud chceme pomocí SQL získat data:
